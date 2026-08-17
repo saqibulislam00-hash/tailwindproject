@@ -30,7 +30,7 @@
     </header>
 
     <section class="min-h-screen  px-6 pt-25 pb-12  mx-auto max-w-6xl">
-        <div class="max-w-2xl">
+        <section class="max-w-2xl">
  <div class="flex   items-center gap-3 mb-6  ">
             
                 <span class="border rounded-full border-(--accent-border) px-3 py-1 text-medium text-(--accent) bg-(--accent-dim)">DevOps</span>
@@ -49,9 +49,9 @@
         <p class="mt-5 text-lg leading-relaxed font-light text-(--text-2)">
             If you've ever heard "it works on my machine" - Docker is the fix. Here's everything you need to know to get started, explained simply.
         </p>
-        </div>
+        </section>
        
-        <div class="mt-8 gap-4 items-center flex">
+        <div class="mt-8 gap-4 items-center flex border-b-2 border-(--border) pb-12">
             <div class="items-center flex justify-center shrink-0 border border-(--accent-border) bg-(--accent-dim) rounded-full w-10 h-10 ">
                <span class="font-bold text-(--accent) text-sm select-none ">SUI</span>
             </div>
@@ -61,7 +61,74 @@
             </div>
         </div>
 
+
+ <section class="pt-12 md:grid grid-cols-4 relative ">
+
+    <aside class="hidden md:block w-44 shrink-0">
+<div class="md:sticky top-24 h-auto gap-4 flex flex-col ">
+            <p class="text-(--text-4) uppercase font-semibold text-xs tracking-wide ">Contents</p>
+           <a href="#problem" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">The problem</a>
+           <a href="#doker" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">What is doker?</a>
+           <a href="#con-vs-VMs" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Container vs VMs</a>
+           <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Key concepts</a>
+           <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Doker compose</a>
+           <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Why team use it</a>
+           <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Where to start</a>
+        </div>
+    </aside>
+        
+        <div class="  col-span-3 max-w-2xl text-base/8 flex flex-col gap-6 ">
+         <p class="text-(--text-2) ">Picture this: you spend two days building a feature on your laptop. Tests pass. Everything works. You push the code, your teammate pulls it down - and nothing runs. Error messages everywhere. Hours of debugging later, you discover the issue: different Node.js versions, a missing environment variable, or a system dependency that only exists on your machine.</p>   
+         <p id="problem" class="text-(--text-3) ">This problem is so common in software development that it has its own sarcastic phrase. Developers call it the "works on my machine" syndrome - and it has wasted more hours of developer time than almost anything else in the industry.</p>
+         <p class="text-(--text-2) italic border-l-2 pl-5 border-(--accent)">"It works on my machine" is not a solution. Docker makes it so the machine doesn't matter at all.</p>
+         <p class="text-(--text-3) ">Docker was created to solve exactly this problem. And it does it so well that it's now one of the most widely used tools in all of software development - from small startups to Google-scale companies.</p>
+
+         <h1 id="doker" class="text-2xl font-serif font-bold mt-5 border-b border-(--border) pb-3">What Exactly Is Docker?</h1>
+         <p class="text-(--text-3) ">Docker is a platform that lets you package your application - along with everything it needs to run - into a single, portable unit called a <span class="text-(--text-1)">container</span>.</p>
+         <p class="text-(--text-3) ">Think of it like a lunchbox. Instead of telling someone "go to the store, buy bread, find mustard, and oh by the way you need a specific brand of knife" - you just hand them the lunchbox. Everything they need is already inside, pre-packed, and ready to go. No assembly required.</p>
+         <p class="text-(--text-3) ">That lunchbox runs the same way whether you open it on your laptop, your teammate's Windows PC, a server in Germany, or a cloud machine in Singapore. The contents - and how they behave - are always identical.</p>
+
+         <h1 id="con-vs-VMs" class="text-2xl font-serif font-bold mt-5 border-b border-(--border) pb-3">Containers vs Virtual Machines</h1>
+         <p class="text-(--text-3) ">Before Docker, the standard answer to "I need an isolated environment" was a <span class="text-(--text-1)"> Virtual Machine (VM)</span>. VMs work - but they're heavy. Each VM runs an entire operating system on top of your operating system. They take minutes to boot, eat up gigabytes of RAM, and feel sluggish.</p>
+
+         <div class="grid grid-cols-2 gap-4">
+            <div class="flex gap-3 flex-col border border-(--border) rounded-2xl p-4 bg-(--surface-solid)">
+                    <div class="inline-flex items-center gap-2 ">
+                        <span class="h-2 w-2  inline-block bg-red-400 rounded-full "></span>
+                        <p class="text-sm font-semibold">Virtual Machine</p>
+                    </div>
+                       <ul class="list-disc text-(--text-3) text-sm flex gap-2 flex-col pl-4">
+                    <li>Full OS inside every VM (gigabytes)</li>
+                    <li>Takes minutes to start</li>
+                    <li>Heavy on RAM and CPU</li>
+                    <li>Hard to share and version control</li>
+                </ul>
+            </div>
+           
+ <div class="flex gap-3 flex-col border border-(--accent-border) rounded-2xl p-4 bg-(--surface-solid)">
+                    <div class="inline-flex items-center gap-2 ">
+                        <span class="h-2 w-2  inline-block bg-green-400 rounded-full "></span>
+                        <p class="text-sm font-semibold">Docker Container</p>
+                    </div>
+                       <ul class="list- text-(--text-3) text-sm flex gap-2 flex-col ">
+                    <li><span class="text-(--accent) shrink-0 mt-0.5 text-xs pr-1">✓</span> Shares your OS kernel (megabytes)</li>
+                    <li> <span class="text-(--accent) shrink-0 mt-0.5 text-xs pr-1">✓</span> Starts in under a second</li>
+                    <li> <span class="text-(--accent) shrink-0 mt-0.5 text-xs pr-1">✓</span> Lightweight and efficient</li>
+                    <li> <span class="text-(--accent) shrink-0 mt-0.5 text-xs pr-1">✓</span> Easy to share via Docker Hub</li>
+                </ul>
+            </div>
+
+         </div>
+
+ <p class="text-(--text-3) ">Containers are so lightweight that you can run dozens of them on a single laptop simultaneously, each completely isolated from the others. This was simply not practical with virtual machines.</p>
+
+        </div>
     </section>
+
+    </section>
+
+
+   
 </body>
 
 </html>
