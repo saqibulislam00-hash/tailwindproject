@@ -70,7 +70,7 @@
            <a href="#problem" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">The problem</a>
            <a href="#doker" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">What is doker?</a>
            <a href="#con-vs-VMs" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Container vs VMs</a>
-           <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Key concepts</a>
+           <a href="#concepts" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Key concepts</a>
            <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Doker compose</a>
            <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Why team use it</a>
            <a href="" class="text-(--text-4)  text-xs tracking-wide hover:text-(--accent) duration-200 transition-all  ">Where to start</a>
@@ -122,7 +122,50 @@
 
  <p class="text-(--text-3) ">Containers are so lightweight that you can run dozens of them on a single laptop simultaneously, each completely isolated from the others. This was simply not practical with virtual machines.</p>
 
+   <h1 id="concepts" class="text-2xl font-serif font-bold mt-5 border-b border-(--border) pb-3">The Four Concepts You Need to Know</h1>
+   <p class="text-(--text-3) ">Docker has its own vocabulary. Once you understand these four terms, everything else clicks into place.</p>
+
+   <div class="flex flex-row gap-5 bg-(--surface-solid) p-5 rounded-2xl border border-(--border)">
+    <div >
+       <p class="border border-(--accent-border) text-(--accent) bg-(--accent-dim) inline-block px-3 py-2.5 rounded-lg text-sm font-semibold font-mono mt-1.5 ">01</p> 
+    </div>
+    <div>
+        <p class="text-(--text-1) font-semibold mb-1.5">Image</p>
+        <p class="text-(--text-3) text-sm">An image is the blueprint. It's a read-only template that describes exactly what should be inside a container - the operating system, the installed packages, your application code, and the startup commands. Think of it like a recipe. The recipe itself doesn't cook the food, but it tells you exactly how to.</p>
+        
+    </div>
+   </div>
+   <div class="flex flex-row gap-5 bg-(--surface-solid) p-5 rounded-2xl border border-(--border)">
+    <div ><p class="border border-(--accent-border) text-(--accent) bg-(--accent-dim) inline-block px-3 py-2.5 rounded-lg text-sm font-semibold font-mono mt-1.5">02</p> </div>
+   <div>
+        <p class="text-(--text-1) font-semibold mb-1.5">Container</p>
+        <p class="text-(--text-3) text-sm">A container is a running instance of an image. Following our recipe analogy: if an image is the recipe, a container is the actual cooked meal. You can spin up multiple containers from the same image, each completely independent of the others. Start them, stop them, delete them - the image remains untouched.</p>
+        
+    </div>
+   </div>
+   <div class="flex flex-row gap-5 bg-(--surface-solid) p-5 rounded-2xl border border-(--border)">
+    <div><p class="border border-(--accent-border) text-(--accent) bg-(--accent-dim) inline-block px-3 py-2.5 rounded-lg text-sm font-semibold font-mono mt-1.5">03</p> </div>
+     <div>
+        <p class="text-(--text-1) font-semibold mb-1.5">Dockerfile</p>
+        <p class="text-(--text-3) text-sm">A Dockerfile is a plain text file where you write the instructions to build your image. It lives in your project folder alongside your code and can be committed to Git like any other file. This is what makes Docker so powerful - your environment becomes code. Reviewable, versioned, reproducible.</p>
+        
+    </div>
+   </div>
+   <div class="flex flex-row gap-5 bg-(--surface-solid) p-5 rounded-2xl border border-(--border)">
+    <div><p class="border border-(--accent-border) text-(--accent) bg-(--accent-dim) inline-block px-3 py-2.5 rounded-lg text-sm font-semibold font-mono mt-1.5">04</p> </div>
+     <div>
+        <p class="text-(--text-1) font-semibold mb-1.5">
+Docker Hub</p>
+        <p class="text-(--text-3) text-sm">Docker Hub is like GitHub, but for Docker images. It's a public registry where you can push your images so others can pull and run them. It also hosts thousands of official images for popular tools - Node.js, PostgreSQL, Redis, Nginx - pre-built and ready to use in your project within seconds.</p>
+        
+    </div>
+   </div>
+
+
         </div>
+
+       
+
     </section>
 
     </section>
